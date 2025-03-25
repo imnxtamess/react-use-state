@@ -1,11 +1,9 @@
-import webDevFundamentals from "../data/webDevFundamentals";
-
-function Buttons() {
+export default function Buttons({ title }) {
   return (
     <div className="bg-white p-3">
-      <button class="btn btn-primary" type="button"></button>
+      <button class="btn btn-primary" type="button">
+        {title}
+      </button>
     </div>
   );
 }
-
-export default Buttons;
