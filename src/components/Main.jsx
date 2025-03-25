@@ -22,13 +22,19 @@ function Main() {
           ))}
         </div>
         <div>
-          {webDevFundamentals.map((element) =>
-            activeId === element.id ? (
-              <Descriptions
-                key={element.id}
-                description={element.description}
-              />
-            ) : null
+          {activeId === 0 ? (
+            <div className="card card-body">
+              You have not yet selected a button
+            </div>
+          ) : (
+            webDevFundamentals.map((element) =>
+              activeId === element.id ? (
+                <Descriptions
+                  key={element.id}
+                  description={element.description}
+                />
+              ) : null
+            )
           )}
         </div>
       </div>
