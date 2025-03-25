@@ -1,7 +1,11 @@
-export default function Buttons({ title }) {
+export default function Buttons({ title, isActive, onClick }) {
   return (
     <div className="bg-white p-3">
-      <button class="btn btn-primary" type="button">
+      <button
+        onClick={onClick}
+        className={`btn ${isActive ? "btn-warning" : "btn-primary"}`}
+        type="button"
+      >
         {title}
       </button>
     </div>

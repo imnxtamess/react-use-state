@@ -1,8 +1,10 @@
+import { useState } from "react";
 import Buttons from "./Buttons";
 import Descriptions from "./Descriptions";
 import webDevFundamentals from "../data/webDevFundamentals";
 
 function Main() {
+  const [activeId, setActiveId] = useState(0);
   return (
     <main>
       <header>
@@ -11,13 +13,23 @@ function Main() {
       <div className="px-5">
         <div className="d-flex">
           {webDevFundamentals.map((element) => (
-            <Buttons key={element.id} title={element.title} />
+            <Buttons
+              key={element.id}
+              title={element.title}
+              isActive={activeId === element.id}
+              onClick={() => setActiveId(element.id)}
+            />
           ))}
         </div>
         <div>
-          {webDevFundamentals.map((element) => (
-            <Descriptions key={element.id} description={element.description} />
-          ))}
+          {webDevFundamentals.map((element) =>
+            activeId === element.id ? (
+              <Descriptions
+                key={element.id}
+                description={element.description}
+              />
+            ) : null
+          )}
         </div>
       </div>
     </main>
