@@ -1,7 +1,8 @@
-export default function Descriptions({ description }) {
+export default function Descriptions({ description, title }) {
   return (
-    <div /*class="collapse"*/>
-      <div className="card card-body">{description}</div>
+    <div className="card">
+      <div className="card-header fw-bold">{title}</div>
+      <div className="card-body">{description}</div>
     </div>
   );
 }
