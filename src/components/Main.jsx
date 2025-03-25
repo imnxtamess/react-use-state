@@ -1,4 +1,5 @@
 import Buttons from "./Buttons";
+import Descriptions from "./Descriptions";
 import webDevFundamentals from "../data/webDevFundamentals";
 
 function Main() {
@@ -11,6 +12,11 @@ function Main() {
         <div className="d-flex">
           {webDevFundamentals.map((element) => (
             <Buttons key={element.id} title={element.title} />
+          ))}
+        </div>
+        <div>
+          {webDevFundamentals.map((element) => (
+            <Descriptions key={element.id} description={element.description} />
           ))}
         </div>
       </div>
