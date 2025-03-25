@@ -24,8 +24,12 @@ function Main() {
         <div>
           {activeId ===
           0 /* Checks if no button is selected and prints the default message */ ? (
-            <div className="card card-body">
-              You have not yet selected a button
+            <div className="card">
+              <div className="card-header fw-bold">Select a button</div>
+              <div className="card-body">
+                Please click on a button if you want to see a short summary of
+                the selected element
+              </div>
             </div>
           ) : (
             /*Else if */ webDevFundamentals.map(
